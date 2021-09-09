@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <title>Love Calculator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&display=swap');
+        *{padding: 0;margin: 0;box-sizing: border-box;font-family: 'IBM Plex Sans Arabic', sans-serif;}
+        body{
+            background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3))
+            , url('https://images.pexels.com/photos/6478819/pexels-photo-6478819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            background-repeat: no-repeat;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position:center;
+        }
+        header{
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="card w-50 m-auto text-center">
+            <div class="card-header bg-danger text-white">Love Calculator</div>
+                <div class="card-body">
+                    <form class="form-inline w-75 m-auto">
+                        <div class="form-group">
+                            <input type="text" class="form-control text-center" minlength="3" maxlength="15" name="" placeholder="Your Name" id="firstPerson"/>
+                        </div>
+                        <div><span class="pl-4 pr-4"> + </span></div>
+                        <div class="form-group">
+                            <input type="text" class="form-control text-center" minlength="3" maxlength="15" name="" placeholder="Your Lover's Name" id="secondPerson"/>
+                        </div>
+                    </form>
+                </div>
+                    <br/>
+                    <div class="rowBtn w-75 m-auto">
+                        <button class="btn btn-success w-50" onclick="findpercentage()">Match</button>
+                    </div>
+                    <br/>
+                    <div class="rowResult">
+                        <input type="text" id="result" class="form-control w-80 m-auto text-center border-0" />
+                    </div><br/>
+                <div class="card-footer bg-danger text-white">Stories end,Love stories don't. Love will always find its way.</div>
+        </div>
+    </header>
+    <script>
+        function findpercentage()
+        {
+            var loveResult=Math.ceil(Math.random() * 100);
+            var firstperson=document.getElementById("firstPerson").value;
+            var secondperson=document.getElementById("secondPerson").value;
+            if(firstperson != "" && secondperson != ""&& firstperson.length >=3 && secondperson.length >=3)
+            {
+                document.getElementById("result").value= "Match between "+firstperson+" and "+ secondperson+" is "+loveResult+'%.' ;
+            }
+            else if(firstperson.length <3 && secondperson.length <3)
+            {
+                alert("Lovers names are too short. Enter correct lovers name!!");
+            }
+            else
+            {
+                alert("Love Birds are always together. Enter lovers name!!");
+            }
+            
+        }
+    </script>
+</body>
+</html>
